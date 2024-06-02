@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Users";
+}
+
+
+<div class="userList" >
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Email</th>
+                <th scope="col">Потребителско име</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Users)
+            {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>@item.Email</td>
+                    <td>@item.UserName</td>
+                    <td>
+                        <a class="btn-danger btn" asp-area="Admin" asp-controller="Admin" asp-action="DeleteUser" asp-route-id="@item.Id"> Премахни потребител</a>
+                        @if (item?.Role == "Moderator")
+                        {
+                            <a class="btn-warning btn" asp-area="Admin" asp-controller="Admin" asp-action="SetUserAsDefault" asp-route-id="@item.Id"> Понижи потребител в гост</a>
+                        }
+                        else
+                        {
+                            <a class="btn-warning btn" asp-area="Admin" asp-controller="Admin" asp-action="SetUserAsModerator" asp-route-id="@item.Id"> Повиши потребител в Модератор</a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

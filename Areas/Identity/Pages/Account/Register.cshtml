@@ -1,0 +1,98 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+@*<h1>@ViewData["Title"]</h1>*@
+
+@*<div class="row">
+    <div class="col-md-4">
+    <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-floating">
+    <label asp-for="Input.Email"></label>
+    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
+    <span asp-validation-for="Input.Email" class="text-danger"></span>
+    </div>
+    <div class="form-floating">
+    <label asp-for="Input.Password"></label>
+    <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
+    <span asp-validation-for="Input.Password" class="text-danger"></span>
+    </div>
+    <div class="form-floating">
+    <label asp-for="Input.ConfirmPassword"></label>
+    <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
+    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+    </div>
+    <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+    </form>
+    </div>
+    </div>*@
+
+
+<div class="add-row" style="margin-top:50px; margin-bottom:340px;">
+    <div class="register-box">
+        <div class="register-logo">
+            <a><b>Wiki</b> система</a>
+        </div>
+
+        <div class="card">
+            <div class="card-body register-card-body">
+                <p class="login-box-msg">Регистрирай се</p>
+                <form id="" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    <div class="input-group mb-3">
+                        <input asp-for="Input.UserName" placeholder="Потребителско име" class="form-control" autocomplete="username" aria-required="true" />
+                        <span asp-validation-for="Input.UserName" class="text-danger"></span>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input asp-for="Input.Email" placeholder="E-mail" class="form-control" autocomplete="username" aria-required="true" />
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input asp-for="Input.Password" placeholder="Парола" class="form-control" autocomplete="new-password" aria-required="true" />
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input asp-for="Input.ConfirmPassword" placeholder="Потвърди паролата" class="form-control" autocomplete="new-password" aria-required="true" />
+                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- /.col -->
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary btn-block" style="width:150px;">Регистрирай се</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </form>
+
+                <a href="/Identity/Account/Login" class="text-center">Имаш профил?</a>
+            </div>
+            <!-- /.form-box -->
+        </div><!-- /.card -->
+    </div>
+</div>
+
+@section Scripts {
+<partial name="_ValidationScriptsPartial" />
+}
